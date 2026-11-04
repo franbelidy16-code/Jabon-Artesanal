@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jabón artesanal elaborado mediante saponificación de aceite de girasol usado.">
+<title>Jabón Artesanal | Una nueva vida para el aceite</title>
+
+<style>
+:root {
+ --petrol:#123F52;
+ --petrol2:#1B5367;
+ --beige:#DFCBAB;
+ --cream:#F7F1E7;
+ --white:#FFFDF9;
+ --ink:#343A3B;
+ --muted:#687174;
+ --line:#D8CBB8;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+ margin:0;
+ background:var(--cream);
+ color:var(--ink);
+ font-family:Arial,Helvetica,sans-serif;
+ line-height:1.7;
+}
+
+header{
+ position:sticky;
+ top:0;
+ z-index:5;
+ background:rgba(247,241,231,.97);
+ border-bottom:1px solid var(--line);
+}
+
+.nav{
+ max-width:1150px;
+ margin:auto;
+ padding:16px 6%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:20px;
+}
+
+.logo{
+ font:bold 1.15rem Georgia,serif;
+ letter-spacing:.13em;
+ color:var(--petrol);
+}
+
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ gap:19px;
+}
+
+nav a{
+ text-decoration:none;
+ color:var(--petrol);
+ font-size:.85rem;
+ font-weight:bold;
+}
+
+.hero{
+ background:var(--petrol);
+ color:var(--cream);
+ padding:82px 7%;
+}
+
+.hero-inner{
+ max-width:1100px;
+ margin:auto;
+ display:grid;
+ grid-template-columns:1.1fr .9fr;
+ gap:50px;
+ align-items:center;
+}
+
+.kicker{
+ color:var(--beige);
+ font-size:.75rem;
+ letter-spacing:.2em;
+ text-transform:uppercase;
+ font-weight:bold;
+}
+
+h1,h2,h3{
+ font-family:Georgia,"Times New Roman",serif;
+ font-weight:normal;
+}
+
+h1{
+ font-size:clamp(3rem,6vw,5.7rem);
+ line-height:1.02;
+ margin:16px 0 20px;
+}
+
+.hero p{
+ font-size:1.05rem;
+ color:#f0e8dc;
+ max-width:590px;
+}
+
+.button{
+ display:inline-block;
+ margin-top:17px;
+ padding:13px 23px;
+ background:var(--beige);
+ color:var(--petrol);
+ text-decoration:none;
+ font-weight:bold;
+ font-size:.85rem;
+}
+
+.hero-photo{
+ width:100%;
+ height:390px;
+ object-fit:cover;
+ border:10px solid #ffffff18;
+}
+
+section{padding:74px 7%}
+.wrap{max-width:1050px;margin:auto}
+
+.eyebrow{
+ text-align:center;
+ color:var(--petrol2);
+ font-size:.73rem;
+ letter-spacing:.2em;
+ text-transform:uppercase;
+ font-weight:bold;
+}
+
+h2{
+ text-align:center;
+ color:var(--petrol);
+ font-size:clamp(2.1rem,4vw,3rem);
+ line-height:1.12;
+ margin:12px 0 16px;
+}
+
+.lead{
+ max-width:760px;
+ text-align:center;
+ margin:0 auto 38px;
+ color:var(--muted);
+}
+
+.white{background:var(--white)}
+
+.story{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:38px;
+ align-items:center;
+}
+
+.story h3{
+ font-size:1.8rem;
+ color:var(--petrol);
+ margin:0 0 10px;
+}
+
+.story p{color:#5e686b}
+
+.quote{
+ background:var(--cream);
+ padding:28px;
+ border-left:4px solid var(--petrol);
+ font:1.35rem/1.5 Georgia,serif;
+ color:var(--petrol);
+}
+
+.stats,.ingredients,.cards{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
+}
+
+.stat,.ingredient,.card{
+ background:var(--white);
+ padding:23px 17px;
+ text-align:center;
+}
+
+.stat strong{
+ display:block;
+ color:var(--petrol);
+ font:2rem Georgia,serif;
+}
+
+.stat span{
+ font-size:.82rem;
+ color:var(--muted);
+}
+
+.ingredient{
+ border:1px solid var(--line);
+ text-align:left;
+}
+
+.ingredient small{
+ color:var(--petrol2);
+ font-weight:bold;
+ letter-spacing:.1em;
+}
+
+.ingredient h3,.card h3{
+ color:var(--petrol);
+ font-size:1.3rem;
+ margin:8px 0;
+}
+
+.ingredient p,.card p{
+ font-size:.9rem;
+ color:var(--muted);
+ margin:0;
+}
+
+.blue{
+ background:var(--petrol);
+ color:var(--cream);
+}
+
+.blue h2{color:var(--cream)}
+.blue .eyebrow{color:var(--beige)}
+.blue .lead{color:#e1e6e4}
+
+.steps{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
+}
+
+.step{
+ border-top:1px solid #ffffff70;
+ padding:18px 8px;
+}
+
+.step b{
+ color:var(--beige);
+ font-size:.78rem;
+ letter-spacing:.15em;
+}
+
+.step h3{
+ font-size:1.35rem;
+ margin:8px 0;
+ color:var(--cream);
+}
+
+.step p{
+ font-size:.88rem;
+ color:#e1e6e4;
+ margin:0;
+}
+
+.result-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:35px;
+ align-items:center;
+}
+
+.result-list{
+ padding:0;
+ list-style:none;
+}
+
+.result-list li{
+ padding:12px 0;
+ border-bottom:1px solid var(--line);
+ display:flex;
+ justify-content:space-between;
+ gap:15px;
+}
+
+.result-list span{color:var(--muted)}
+
+.result-grid img{
+ width:100%;
+ max-height:340px;
+ object-fit:cover;
+}
+
+.note{
+ margin-top:22px;
+ padding:19px 22px;
+ background:#efe3d1;
+ border-left:4px solid #a9824d;
+ color:#51483d;
+ font-size:.9rem;
+}
+
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:16px;
+}
+
+.gallery img{
+ width:100%;
+ height:290px;
+ object-fit:cover;
+ background:var(--beige);
+}
+
+.gallery .wide{grid-column:span 2}
+
+.environment{background:#eee4d5}
+
+.cards{grid-template-columns:repeat(3,1fr)}
+
+.contact{
+ background:var(--petrol);
+ color:var(--cream);
+ text-align:center;
+}
+
+.contact h2{color:var(--cream)}
+
+.contact p{
+ max-width:700px;
+ margin:auto;
+ color:#e1e6e4;
+}
+
+footer{
+ background:#0D303E;
+ color:#e1e6e4;
+ text-align:center;
+ padding:22px;
+ font-size:.8rem;
+}
+
+@media(max-width:760px){
+ .hero-inner,.story,.result-grid{grid-template-columns:1fr}
+ .hero-photo{height:300px}
+ .stats,.ingredients{grid-template-columns:repeat(2,1fr)}
+ .steps,.gallery,.cards{grid-template-columns:1fr}
+ .gallery .wide{grid-column:auto}
+ .nav{align-items:flex-start;flex-direction:column}
+ nav{gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+ <div class="logo">JABÓN ARTESANAL</div>
+ <nav>
+  <a href="#historia">Nuestra historia</a>
+  <a href="#proceso">Elaboración</a>
+  <a href="#producto">Producto</a>
+  <a href="#compromiso">Compromiso</a>
+ </nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="hero-inner">
+ <div>
+  <div class="kicker">Hecho por nosotros · Proyecto de ecodiseño</div>
+  <h1>Una nueva vida para el aceite.</h1>
+  <p>Elaboramos jabón artesanal mediante la saponificación de aceite de girasol usado. Una iniciativa hecha por nosotros para aprovechar un residuo y transformarlo en un producto para el lavado de ropa.</p>
+  <a class="button" href="#historia">CONOCE NUESTRO PROYECTO</a>
+ </div>
+
+ <img class="hero-photo"
+ src="assets/jabon-terminado.jpg"
+ alt="Jabón artesanal elaborado en nuestro proyecto">
+</div>
+</section>
+
+<section class="white" id="historia">
+<div class="wrap">
+ <div class="eyebrow">El origen de nuestra propuesta</div>
+ <h2>De residuo a recurso</h2>
+ <p class="lead">Nuestro proyecto parte de una pregunta: ¿qué podemos hacer con el aceite de cocina después de utilizarlo?</p>
+
+ <div class="story">
+  <div>
+   <h3>Una transformación hecha por nosotros</h3>
+   <p>El aceite de cocina usado puede causar problemas cuando se vierte por el desagüe. Por eso, buscamos una alternativa para aprovecharlo como materia prima en la elaboración de jabón sólido.</p>
+   <p>Mediante el proceso de saponificación, desarrollamos un prototipo artesanal destinado al lavado de ropa. La propuesta también nos permitió estudiar el aprovechamiento de residuos y la economía circular.</p>
+  </div>
+
+  <div class="quote">
+   “Cada proyecto puede ser una oportunidad para transformar la manera en que aprovechamos nuestros recursos”.
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="producto">
+<div class="wrap">
+ <div class="eyebrow">Nuestro prototipo</div>
+ <h2>El resultado en cifras</h2>
+ <p class="lead">Datos registrados durante la elaboración experimental descrita en nuestro proyecto.</p>
+
+ <div class="stats">
+  <div class="stat"><strong>201,15 g</strong><span>Jabón obtenido</span></div>
+  <div class="stat"><strong>30 min</strong><span>Tiempo aproximado de elaboración</span></div>
+  <div class="stat"><strong>2 g</strong><span>Residuo adherido a recipientes</span></div>
+  <div class="stat"><strong>pH 11</strong><span>Valor registrado en el ensayo</span></div>
+ </div>
+</div>
+</section>
+
+<section class="white">
+<div class="wrap">
+ <div class="eyebrow">Componentes del prototipo</div>
+ <h2>Ingredientes utilizados</h2>
+ <p class="lead">Cantidades reportadas para el ensayo experimental.</p>
+
+ <div class="ingredients">
+  <article class="ingredient">
+   <small>01 · MATERIA PRIMA</small>
+   <h3>Aceite usado</h3>
+   <p>125 mL de aceite de girasol usado y filtrado.</p>
+  </article>
+
+  <article class="ingredient">
+   <small>02 · AGENTE ALCALINO</small>
+   <h3>Soda cáustica</h3>
+   <p>50 mL de solución de hidróxido de sodio al 50 %.</p>
+  </article>
+
+  <article class="ingredient">
+   <small>03 · INSUMO</small>
+   <h3>Alcohol</h3>
+   <p>31 mL de alcohol (etanol).</p>
+  </article>
+
+  <article class="ingredient">
+   <small>04 · AROMA</small>
+   <h3>Esencia</h3>
+   <p>2 mL de esencia.</p>
+  </article>
+ </div>
+</div>
+</section>
+
+<section class="blue" id="proceso">
+<div class="wrap">
+ <div class="eyebrow">Así lo elaboramos</div>
+ <h2>Un proceso artesanal</h2>
+ <p class="lead">Acondicionamos el aceite y preparamos la mezcla para obtener nuestro prototipo sólido.</p>
+
+ <div class="steps">
+  <article class="step"><b>PASO 01</b><h3>Recolección</h3><p>Obtención del aceite de girasol usado para aprovecharlo como materia prima.</p></article>
+  <article class="step"><b>PASO 02</b><h3>Filtración</h3><p>Retiro de restos sólidos e impurezas presentes en el aceite.</p></article>
+  <article class="step"><b>PASO 03</b><h3>Preparación</h3><p>Medición de los ingredientes utilizados en el ensayo.</p></article>
+  <article class="step"><b>PASO 04</b><h3>Saponificación</h3><p>Mezcla de los componentes para llevar a cabo la reacción.</p></article>
+  <article class="step"><b>PASO 05</b><h3>Solidificación</h3><p>Reposo de la preparación hasta obtener una consistencia sólida.</p></article>
+  <article class="step"><b>PASO 06</b><h3>Curado</h3><p>Secado al aire libre antes de evaluar el producto obtenido.</p></article>
+ </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+ <div class="eyebrow">Evaluación experimental</div>
+ <h2>Características observadas</h2>
+ <p class="lead">El ensayo permitió obtener un producto sólido y reconocer aspectos que pueden mejorarse en futuras pruebas.</p>
+
+ <div class="result-grid">
+  <ul class="result-list">
+   <li><span>Aspecto</span><strong>Sólido firme</strong></li>
+   <li><span>Color interior</span><strong>Crema</strong></li>
+   <li><span>Olor a aceite</span><strong>Disminuyó</strong></li>
+   <li><span>Esencia perceptible</span><strong>Muy leve</strong></li>
+   <li><span>pH registrado</span><strong>11</strong></li>
+  </ul>
+
+  <img src="assets/jabon-dos.jpg"
+  alt="Vista del jabón artesanal terminado">
+ </div>
+
+ <div class="note">
+  <strong>Nota de seguridad:</strong>
+  El ensayo registró un pH de 11 y señaló un posible exceso de NaOH. Por ello, este prototipo se presenta para el lavado de ropa y no debe promocionarse como jabón cosmético ni para uso sobre la piel.
+ </div>
+</div>
+</section>
+
+<section class="white">
+<div class="wrap">
+ <div class="eyebrow">Nuestro producto</div>
+ <h2>Así quedó nuestro jabón</h2>
+ <p class="lead">Fotografías reales del prototipo elaborado por nuestro equipo.</p>
+
+ <div class="gallery">
+  <img class="wide" src="assets/jabon-pareja.jpg" alt="Dos piezas del jabón artesanal">
+  <img src="assets/jabon-detalle.jpg" alt="Detalle de la textura del jabón">
+ </div>
+</div>
+</section>
+
+<section class="environment" id="compromiso">
+<div class="wrap">
+ <div class="eyebrow">El propósito del proyecto</div>
+ <h2>Aprovechamiento y responsabilidad</h2>
+ <p class="lead">La propuesta se relaciona con la economía circular y el ODS 12: producción y consumo responsables.</p>
+
+ <div class="cards">
+  <article class="card">
+   <h3>Aprovechar un residuo</h3>
+   <p>Dar un nuevo uso al aceite de cocina después de su utilización.</p>
+  </article>
+
+  <article class="card">
+   <h3>Cuidar el agua</h3>
+   <p>Promover la disposición adecuada del aceite usado y evitar su vertimiento por el desagüe.</p>
+  </article>
+
+  <article class="card">
+   <h3>Economía circular</h3>
+   <p>Explorar la transformación de un residuo en un producto útil para la limpieza.</p>
+  </article>
+ </div>
+
+ <div class="note">
+  Los beneficios ambientales son el propósito de la propuesta. La cuantificación de impactos mediante el Análisis de Ciclo de Vida y OpenLCA debe presentarse únicamente cuando se cuente con los resultados correspondientes.
+ </div>
+</div>
+</section>
+
+<section class="contact">
+<div class="wrap">
+ <div class="eyebrow">Proyecto de ecodiseño</div>
+ <h2>JABÓN ARTESANAL</h2>
+ <p>Elaborado por nosotros a partir del aprovechamiento de aceite de girasol usado.</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+JABÓN ARTESANAL · Proyecto de ecodiseño · Bogotá, Colombia
+</footer>
+
+</body>
+</html>
